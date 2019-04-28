@@ -1,0 +1,15 @@
+<div class="flip-card" *ngFor="let f of favorites">
+    <div class="flip-card-inner">
+        <div class="flip-card-front">
+            <img src="{{f.image}}">
+        </div>
+        <div class="flip-card-back">
+            <h4 class="card-title">{{f.title | titlecase}}</h4>
+            <h6 class="card-text">{{f.subTitle}}</h6>
+            <a href="{{f.link}}" target="_blank">
+                <h6><img class="icon" src="assets/images/shazam.png">shazam</h6>
+            </a>
+            <img class="heart" src="assets/images/favorite.png" (click)="removeFromFavorites(f.indexInClientArray)">
+        </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<input type="text" [ngModel]="searchText |titlecase" (ngModelChange)="searchText=$event" class="form-control"
+    placeholder="Enter a song title"> <!-- ngModel splited for pipe use -->
+
+<div class="col-md table table-responsive" *ngIf=" songs.length>0; else spinner">
+    <table class="table">
+        <tbody>
+            <tr *ngFor="let s of songs | filter:searchText; let i=index" [ngClass]="{'favorite':checkClass(i)}">
+                <!--If certain song exsists in favorites array => apply favorite class -->
+                <td scope="row">{{i+1}}</td>
+                <!--Start from 1. -->
+                <td scope="row"><img src={{s.share.image}}></td>
+                <td scope="row">
+                    <h4>{{s.heading.title | titlecase}}</h4>
+                    <h5>{{s.heading.subtitle}}</h5>
+                </td>
+                <td scope="row"><a href="{{s.share.href}}" target="_blank">
+                        <h6><img class="icon" src="assets/images/shazam.png">shazam</h6>
+                    </a></td>
+                <td scope="row"><img class="heart" src="assets/images/{{buttonImages[i]}}.png"
+                        (click)="addOrRemoveFromFavorites(i)"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<ng-template #spinner>
+    <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+</ng-template>

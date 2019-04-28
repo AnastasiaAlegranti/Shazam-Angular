@@ -1,0 +1,43 @@
+section {
+    box-sizing: border-box;
+    padding: 0;
+    min-height: 100%; 
+    text-align: center;  
+    background-image: linear-gradient(white, gray);
+    position: relative;
+    display: flex; 
+}
+.fixed-header {
+    position: fixed;
+    width: 100%;
+    min-height: 85px; 
+    border-top: 2px solid grey;
+    border-bottom: 2px solid grey;
+    background-image: linear-gradient( aqua,white);
+    z-index: 3;
+    text-align: left;
+}
+header{
+    text-align: center;
+}
+
+main{
+    position: relative;
+    z-index: 1;
+    padding-bottom: 50px;
+    width: 100%; 
+    padding-top:  100px; 
+    padding-left:5px;
+    padding-right: 5px; 
+    margin:0px;   
+}
+
+footer {
+    padding: 10px;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    border-top: 2px solid rgb(206, 204, 204); 
+    background-color: aquamarine; 
+    z-index: 2;
+    }

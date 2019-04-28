@@ -1,0 +1,28 @@
+.favorite{
+background-color: rgb(233, 217, 228);
+}
+
+img{
+    height: 100px;
+    width: 100px;
+}
+
+.icon{
+    height: 40px;
+    width: 40px;
+    padding: 5px;
+}
+
+.heart{
+    height: 80px;
+    width: 80px;
+    padding: 5px;
+}
+
+tr:hover{
+background-color: azure;
+}
+
+table{
+    margin-top: 5px;
+}
